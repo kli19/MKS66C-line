@@ -71,5 +71,21 @@ void draw_line(int x0, int y0, int x1, int y1, screen s, color c) {
     }
   }
 
+  //octant VIII
+  else if (A <= 0 && A >= B){
+    int d = 2*A - B;
+    while (x <= x1){
+      plot(s, c, x, y);
+      x++;
+      d += 2*A;
+      if (d <= 0){
+	y--;
+	d -= 2*B;
+      }
+    }
+  }
 
+  else{
+    printf("ERROR\n");
+  }
 }
