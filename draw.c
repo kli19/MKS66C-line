@@ -19,4 +19,16 @@ void draw_line(int x0, int y0, int x1, int y1, screen s, color c) {
     y0 = temp;
   }
 
+  //current point
+  int x = x0;
+  int y = y0;
+  
+  //dy
+  int A = y1 - y0;
+  
+  //-dx
+  int B = -(x1 - x0);
+
+  
+
 }
