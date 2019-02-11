@@ -16,7 +16,15 @@ int main() {
   c.blue = 0;
 
   clear_screen(s);
+  
+  for (int i = 0; i <= XRES; i+=50){
+    draw_line(i, 0, XRES - i, YRES, s, c);
+    draw_line(0, i, XRES, YRES - i, s, c);
+  }
+  
 
+  int centerX = XRES / 2;
+  int centerY = YRES / 2;
 
   display(s);
   save_extension(s, "lines.png");
