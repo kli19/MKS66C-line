@@ -8,4 +8,15 @@
 //Insert your line algorithm here
 void draw_line(int x0, int y0, int x1, int y1, screen s, color c) {
 
+  // swap start and end if not going left to right
+  if (x1 < x0){
+    int temp = x1;
+    x1 = x0;
+    x0 = temp;
+
+    temp = y1;
+    y1 = y0;
+    y0 = temp;
+  }
+
 }
