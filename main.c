@@ -19,40 +19,37 @@ int main() {
   int centerX = XRES/2;
   int centerY = YRES/2;
 
-  c.red = 255;
-  c.green = 0;
-  c.blue = 0;
   
-  for (int x=0, y=0;x<= XRES && y<+ YRES; x+=20, y+=20){
+  for (int x=0, y=0;x<= XRES && y<+ YRES; x+=20, y+=20){      
+    c.red = rand()%256;
+    c.green = rand()%256;
+    c.blue = 0;
     draw_line(centerX+x, centerY+y, centerX+y, centerY-x, s, c);
     draw_line(centerX+y, centerY-x, centerX-x, centerY-y, s, c);
     draw_line(centerX-x, centerY-y, centerX-y, centerY+x, s, c);
     draw_line(centerX-y, centerY+x, centerX+x, centerY+y, s, c);
   }
-
-  c.red = 0;
-  c.green = 255;
-  c.blue = 0;
   
   for (int x=0, y=0;x<= XRES && y<+ YRES; x+=10, y+=20){
+    c.red = 0;
+    c.green = rand()%265;
+    c.blue = rand()%256;
     draw_line(centerX+x, centerY+y, centerX+y, centerY-x, s, c);
     draw_line(centerX+y, centerY-x, centerX-x, centerY-y, s, c);
     draw_line(centerX-x, centerY-y, centerX-y, centerY+x, s, c);
     draw_line(centerX-y, centerY+x, centerX+x, centerY+y, s, c);
   }
-
-  c.red = 0;
-  c.green = 0;
-  c.blue = 255;
   
   for (int x=0, y=0;x<= XRES && y<+ YRES; x+=20, y+=10){
+    c.red = rand()%265;
+    c.green = 0;
+    c.blue = rand()%256;
     draw_line(centerX+x, centerY+y, centerX+y, centerY-x, s, c);
     draw_line(centerX+y, centerY-x, centerX-x, centerY-y, s, c);
     draw_line(centerX-x, centerY-y, centerX-y, centerY+x, s, c);
     draw_line(centerX-y, centerY+x, centerX+x, centerY+y, s, c);
   }
   
-
   display(s);
   save_extension(s, "lines.png");
 }
