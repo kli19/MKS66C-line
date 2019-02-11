@@ -43,6 +43,20 @@ void draw_line(int x0, int y0, int x1, int y1, screen s, color c) {
     }    
   }
   
+    //octant II
+  else if(A >= 0 && A >= -B){
+    int d = A + 2*B;
+    while (y <= y1){
+      plot(s, c, x, y);
+      y++;
+      d += 2*B;
+      if(d <= 0){
+	x++;
+	d += 2*A;
+      }
+    }
+  }
+
 
 
 }
